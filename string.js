@@ -10,3 +10,8 @@ function digitCheck(string) {
 
   return resultDigits;
 }
+
+function reverseName(origName) {
+  var words = origName.split(" ");
+  return words[1] + ", " + words[0];
+}
