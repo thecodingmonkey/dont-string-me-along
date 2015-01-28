@@ -32,3 +32,17 @@ function palindromeCheck(string) {
   // and just compare them.  (Thanks Mika!)
   return string == string.split("").reverse().join("");
 }
+
+function palindromeFinder(string) {
+  if (palindromeCheck(string)) {
+    console.log('string');
+ //   return string;
+  }
+
+  if (string.length > 2) {
+    palindromeFinder(string.substr(0, string.length - 1))
+    palindromeFinder(string.substr(1, string.length - 1))
+    
+  }
+
+}
