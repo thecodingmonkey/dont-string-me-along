@@ -20,3 +20,7 @@ function reverseName(origName) {
 function circularCheck(substring, string) {
   return ((string + string).indexOf(substring) != -1) && (substring.length < string.length);
 }
+
+function palindromeCheck(string) {
+  return string == string.split("").reverse().join("");
+}
