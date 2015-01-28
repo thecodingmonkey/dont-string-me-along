@@ -15,3 +15,8 @@ function reverseName(origName) {
   var words = origName.split(" ");
   return words[1] + ", " + words[0];
 }
+
+
+function circularCheck(substring, string) {
+  return ((string + string).indexOf(substring) != -1) && (substring.length < string.length);
+}
