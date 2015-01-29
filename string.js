@@ -46,3 +46,48 @@ function palindromeFinder(string) {
   }
 
 }
+
+
+function sequenceFinder(string, firstGuess) {
+  var lower, upper;
+  var i;
+
+  for (i=1; i < string.length; i++) {
+    var currentVal = string.substr(0, i);
+    console.log('trying with sequence starting at ' + currentVal);
+    var currentString = string.substr(i);
+
+    while (currentString.length > 0) {
+      console.log(currentVal, currentString);
+      if (currentString.indexOf((parseInt(currentVal)+1).toString()) === 0) {
+        currentVal = parseInt(currentVal) + 1;
+        currentString = currentString.substr(currentVal.toString().length);
+
+        if (currentString.length === 0) {
+          string = '';
+        }
+
+      }
+      else if (currentString.indexOf((parseInt(currentVal)+2).toString()) === 0) {
+        currentVal = parseInt(currentVal) + 2;
+        console.log('skipped over ' + (parseInt(currentVal) -1));
+        currentString = currentString.substr(currentVal.toString().length);
+
+        if (currentString.length === 0) {
+          string = '';
+        }
+
+
+      }
+      else {
+        console.log('this is an invalid sequence');   
+        currentString = '';
+      }
+      
+    }
+
+  }
+}
+
+sequenceFinder("1234567910");
+sequenceFinder("9899100101103104105");
